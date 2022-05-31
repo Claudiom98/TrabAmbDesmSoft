@@ -1,0 +1,47 @@
+<h1>Tela de Vendas</h1>
+
+<form name="form2" action="addVenda" method="post">
+  <p>Cliente:  <select name="cliv" id="cliv">
+                {{#data2}}
+                <option value={{nome_clientes}}>{{nome_clientes}}</option>
+                {{/data2}}
+               </select></p>
+               <input type="hidden" name = "totalVendas" id = "totalVendas" value={{total}}>
+               <label>Total: R$ {{total}} </label><br>
+
+  <input type="submit" name="subimitVenda" id="submitVenda" value="Vender">
+</form>
+
+
+<form name='form1' action='addItem' method='post'>
+    <select name="item" id="item">
+      {{#data1}}
+       <option value={{nome_produto}}>{{nome_produto}}</option>
+       {{/data1}}
+    </select>
+    <input type='text' name='quantidade' id='quantidade'><br>
+    <input type='submit' name='submitItem' id='submitItem' value='Adicionar'><br>
+</form><br>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Descricao do produto</th>
+    <th>Quantidade</th>
+    <th>Subtotal</th>
+  </tr>
+{{#data3}}
+  <tr>
+    <td>{{id_produto}}</td>
+    <td>{{nome_produto}}</td>
+    <td>{{quantidade}}</td>
+    <td>R$: {{subtotal}}</td>
+    <td><a href="/deletaritemvenda/{{id_vendas_item}}/{{id_produto}}"><img src="/img/xizinho.png"></a></td>
+  </tr>
+{{/data3}}
+</table><br>
+
+
+
+<script>
+
+</script>
